@@ -10,7 +10,7 @@ import plotly.graph_objs as go
 
 # NLTK downloads
 nltk.download('stopwords')
-nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('wordnet')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
