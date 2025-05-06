@@ -27,56 +27,61 @@ def inject_fullpage_theme(mode):
     button_text = "#ffffff" if is_dark else "#000000"
 
     st.markdown(f"""
-        <style>
-        html, body, [class*="stApp"] {{
-            background-color: {bg} !important;
-            color: {fg} !important;
-        }}
+    <style>
+    html, body, [class*="stApp"] {{
+        background-color: {bg} !important;
+        color: {fg} !important;
+    }}
 
-        /* Sidebar */
-        section[data-testid="stSidebar"] {{
-            background-color: {sidebar_bg} !important;
-            color: {fg} !important;
-        }}
+    /* Title Text */
+    h1 {{
+        color: {fg} !important;
+    }}
 
-        section[data-testid="stSidebar"] label,
-        section[data-testid="stSidebar"] p,
-        section[data-testid="stSidebar"] div[role="radiogroup"] > div {{
-            color: {fg} !important;
-        }}
+    /* Sidebar */
+    section[data-testid="stSidebar"] {{
+        background-color: {sidebar_bg} !important;
+        color: {fg} !important;
+    }}
 
-        /* Dropdown */
-        section[data-testid="stSidebar"] .stSelectbox {{
-            background-color: transparent !important;
-        }}
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] div[role="radiogroup"] > div {{
+        color: {fg} !important;
+    }}
 
-        section[data-testid="stSidebar"] .stSelectbox div[role="combobox"] {{
-            background-color: transparent !important;
-            color: {dropdown_text_color} !important;
-            border: 1px solid #777 !important;
-            border-radius: 8px;
-        }}
+    /* Dropdown */
+    section[data-testid="stSidebar"] .stSelectbox {{
+        background-color: transparent !important;
+    }}
 
-        .stSelectbox div[data-baseweb="popover"] {{
-            background-color: {sidebar_bg} !important;
-            color: {dropdown_text_color} !important;
-        }}
+    section[data-testid="stSidebar"] .stSelectbox div[role="combobox"] {{
+        background-color: transparent !important;
+        color: {dropdown_text_color} !important;
+        border: 1px solid #777 !important;
+        border-radius: 8px;
+    }}
 
-        /* Buttons */
-        button[kind="primary"], .stButton>button {{
-            background-color: {button_bg} !important;
-            color: {button_text} !important;
-            border: 1px solid #ffffff33;
-            border-radius: 6px;
-            padding: 0.4rem 0.9rem;
-        }}
+    .stSelectbox div[data-baseweb="popover"] {{
+        background-color: {sidebar_bg} !important;
+        color: {dropdown_text_color} !important;
+    }}
 
-        button[kind="primary"]:hover, .stButton>button:hover {{
-            background-color: #333333 !important;
-            color: #ffffff !important;
-        }}
-        </style>
-    """, unsafe_allow_html=True)
+    /* Buttons */
+    button[kind="primary"], .stButton>button {{
+        background-color: {button_bg} !important;
+        color: {button_text} !important;
+        border: 1px solid #ffffff33;
+        border-radius: 6px;
+        padding: 0.4rem 0.9rem;
+    }}
+
+    button[kind="primary"]:hover, .stButton>button:hover {{
+        background-color: #333333 !important;
+        color: #ffffff !important;
+    }}
+    </style>
+""", unsafe_allow_html=True)
 
     return bg, fg
 
